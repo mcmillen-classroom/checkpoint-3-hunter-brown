@@ -1,41 +1,48 @@
 package com.agrais.quizapp;
 
-import java.io.StreamCorruptedException;
+import java.util.Scanner;
 
 public class Question {
 
-    private int mTextResId;
-    private int mHintResId;
-    private boolean mAnswer;
+ private String mText;
+ // 0 = Boolean 1= String 2= Number (MC)
+ private int mAnswerType;
 
-    public Question(int TextResId, int HintResId, boolean answer )
-    {
-        mTextResId=TextResId;
-        mHintResId=HintResId;
-        mAnswer=answer;
+ public Question (String text){
+     mText = text;
+ }
+ //Only Applies to T/F
+    public boolean checkAnswer (boolean boolResponse){
+     return false;
+    }
+//Only Applies to fill in the Blank
+    public boolean checkAnswer (String userAnswer){
+     return false;
     }
 
-    public int getTextResId() {
-        return mTextResId;
+    //Only Applies to Multiple Choice
+    public boolean checkAnswer(int userChoice){
+     return false;
     }
 
-    public void setTextResId(int textResId) {
-        mTextResId = textResId;
+    public String getText() {
+        return mText;
     }
 
-    public boolean getAnswer() {
-        return mAnswer;
+    public void setText(String text) {
+        mText = text;
     }
 
-    public void setAnswer(boolean answer) {
-        mAnswer = answer;
+    public int getAnswerType() {
+        return mAnswerType;
     }
 
-    public int getHintResId() {
-        return mHintResId;
+    public void setAnswerType(int answerType) {
+        mAnswerType = answerType;
     }
 
-    public void setHintResId(int hintResId) {
-        mHintResId = hintResId;
+    public boolean readInputAndCheckAnswer(Scanner input){
+     return false;
     }
 }
+
